@@ -12,7 +12,7 @@ continuebutton : 'input[type="submit"]'
 }
 
 openURL() {
- cy.visit(Cypress.env('URL'))}
+ cy.visit(Cypress.env('url'))}
 
 enterfirstname(Fname)
 {cy.get(this.weblocators.firstname).type(Fname)}
