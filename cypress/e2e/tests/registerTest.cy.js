@@ -1,11 +1,11 @@
-import { registerPage} from "../pages/registerPage"
+import { registerPage } from '../../pages/registerPage'
 const registerobj = new registerPage()
-import registerData from '../fixtures/registerData.json'
+import registerData from '../../fixtures/registerData.json'
 describe('cypress test automation', () => {
   it('works', () => {
      const randomEmail = `user_${Date.now()}@example.com`
     cy.log('Hello world')
-    //  cy.visit('https://naveenautomationlabs.com/opencart/index.php?route=account/register')
+      //cy.visit('https://naveenautomationlabs.com/opencart/index.php?route=account/register')
    registerobj.openURL()
    registerobj.enterfirstname(registerData.firstname)
    registerobj.enterlastname(registerData.lastname)
