@@ -5,7 +5,7 @@ describe('cypress test automation', () => {
   it('works', () => {
      const randomEmail = `user_${Date.now()}@example.com`
     cy.log('Hello world')
-      //cy.visit('https://naveenautomationlabs.com/opencart/index.php?route=account/register')
+   
    registerobj.openURL()
    registerobj.enterfirstname(registerData.firstname)
    registerobj.enterlastname(registerData.lastname)
