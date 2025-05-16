@@ -1,12 +1,9 @@
-name: parallel test run build test
-
+name: Sanity build test
 on: push
-
 jobs:
-add-to-cart:
-name: Run Add to cart
-runs-on: ubuntu-24.04
-steps:
+  Add-to-cart-run:
+    runs-on: ubuntu-24.04
+    steps:
       - name: Checkout
         uses: actions/checkout@v4
       # Install npm dependencies, cache them correctly
@@ -15,11 +12,10 @@ steps:
         uses: cypress-io/github-action@v6
         with:
           command: npm run test:addToCart
-
-register-flow:
-name: Run Register Flow Test
-runs-on: ubuntu-24.04
-steps:
+  
+  Register-flow-run:
+    runs-on: ubuntu-24.04
+    steps:
       - name: Checkout
         uses: actions/checkout@v4
       # Install npm dependencies, cache them correctly
@@ -27,4 +23,4 @@ steps:
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-          command: npm run test:registerflow
+          command: npm run test:addToCart
