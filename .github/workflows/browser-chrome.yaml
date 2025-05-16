@@ -1,7 +1,5 @@
-name: Firefox build test
-
+name: chrome build test
 on: push
-
 jobs:
   cypress-run:
     runs-on: ubuntu-24.04
@@ -18,13 +16,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Install Firefox (required)
-        run: |
-          sudo apt update
-          sudo apt install -y firefox
-
-      - name: Cypress run on Firefox
+      - name: Cypress run on Chrome
         uses: cypress-io/github-action@v6
         with:
-          browser: firefox
+          browser: chrome
           headed: true
