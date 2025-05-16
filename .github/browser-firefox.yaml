@@ -1,14 +1,30 @@
-name: firefox build test
+name: Firefox build test
+
 on: push
+
 jobs:
   cypress-run:
     runs-on: ubuntu-24.04
+
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
-      # Install npm dependencies, cache them correctly
-      # and run all Cypress tests
-      - name: Cypress run
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Firefox (required)
+        run: |
+          sudo apt update
+          sudo apt install -y firefox
+
+      - name: Cypress run on Firefox
         uses: cypress-io/github-action@v6
         with:
-         browser: firefox
+          browser: firefox
+          headed: true
