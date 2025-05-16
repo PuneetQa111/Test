@@ -1,9 +1,12 @@
 name: parallel test run build test
+
 on: push
+
 jobs:
-  cypress-run:
-    runs-on: ubuntu-24.04
-    steps:
+add-to-cart:
+name: Run Add to cart
+runs-on: ubuntu-24.04
+steps:
       - name: Checkout
         uses: actions/checkout@v4
       # Install npm dependencies, cache them correctly
@@ -13,10 +16,10 @@ jobs:
         with:
           command: npm run test:addToCart
 
-jobs:
-  cypress-run:
-    runs-on: ubuntu-24.04
-    steps:
+register-flow:
+name: Run Register Flow Test
+runs-on: ubuntu-24.04
+steps:
       - name: Checkout
         uses: actions/checkout@v4
       # Install npm dependencies, cache them correctly
