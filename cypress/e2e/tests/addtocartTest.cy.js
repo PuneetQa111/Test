@@ -15,8 +15,7 @@ after(() => {
     landingPageObj.removeItem()
 })
 
-it('item to cart', ()=>{
-  
+it('Add item to cart', ()=>{
    landingPageObj.searchProduct(testData.product.productname)
    landingPageObj.addToCart() 
    landingPageObj.verifysuccessmessage().should('contain', testData.message.successMessage).and('contain', testData.product.productname)
