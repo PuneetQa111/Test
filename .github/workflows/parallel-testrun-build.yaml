@@ -1,4 +1,4 @@
-name: Sanity build test
+name: Parallel build test
 on: push
 jobs:
   Add-to-cart-run:
