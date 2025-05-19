@@ -12,10 +12,11 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           command: npm run test:addToCart
-      - name: HTML Mochawesome Test Report
+
+      - name: Cypress Test Report
         uses: actions/upload-artifact@v4
         with:
-        name: AddtoCart report
+        name: Mochawesome HTML report - AddtoCart
         path: cypress/reports/html
   
   Register-flow-run:
@@ -25,13 +26,14 @@ jobs:
         uses: actions/checkout@v4
       # Install npm dependencies, cache them correctly
       # and run all Cypress tests
+
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
           command: npm run test:registerflow
       
-      - name: HTML Mochawesome Test Report
+      - name: Cypress Test Report 
         uses: actions/upload-artifact@v4
         with:
-        name: Reg flow report
+        name: Mochawesome HTML report - Reg flow
         path: cypress/reports/html
