@@ -7,7 +7,8 @@ module.exports = defineConfig({
     reportDir: 'cypress/reports/html',
     overwrite: false,
     html: true,
-    json: true
+    json: true,
+    cdn:true,
   },
   e2e: {
     baseUrl : 'https://naveenautomationlabs.com/opencart/index.php?route=account/login',
