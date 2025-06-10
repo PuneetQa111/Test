@@ -16,12 +16,12 @@ describe('API automation', () => {
   it('Get single user info', () => {
     cy.request({
         method:'GET',
-        url: 'https://gorest.co.in/public/v2/users/7439527',
+        url: 'https://gorest.co.in/public/v2/users/7939465',
         Headers : {Authorization :"Bearer e8929b0e4783ae39264b36c246e5ec6c3bd7f60022494b6c3dbe61eb8addbea7"},
     })
     .then((response)=>{
          expect(response.status).to.equal(200)
-         expect(response.body.id).to.equal(7439527)
+         expect(response.body.id).to.equal(7939465)
     })
   })
 
